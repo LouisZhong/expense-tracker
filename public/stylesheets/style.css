@@ -1,0 +1,19 @@
+header {
+  background-color: #DDDDDD;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo-title, .btn-logout {
+  margin: 12px;
+}
+
+.logo-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.btn-logout {
+  font-size: 20px;
+}
