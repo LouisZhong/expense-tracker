@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.get('/new', (req, res) => {
+  res.render('new')
+})
+
 app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`)
 })

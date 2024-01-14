@@ -7,6 +7,7 @@ header {
 
 .logo-title, .btn-logout {
   margin: 12px;
+  text-decoration: none;
 }
 
 .logo-title {
@@ -22,6 +23,7 @@ header {
   width: 600px;
   margin: 0 auto;
   margin-top: 20px;
+  /* border: 1px solid red; */
 }
 /* index */
 
@@ -93,4 +95,41 @@ header {
   margin: 0 auto;
   text-align: center;
   /* border: 1px solid red */
+}
+
+.btn-addNewExp {
+  display: block;
+  margin: 40px 0px 0px 60px;
+  width: 200px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background-color: orangered;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+
+/* new */
+
+.td1, .td2, .add-new-btn {
+  height: 40px;
+  font-size: 16px;
+  
+} 
+
+.td2 {
+  text-align: center;
+
+}
+
+.add-new-input {
+  width: 160px;
+  height: 30px;
+}
+
+select {
+  padding: 1px;
 }
