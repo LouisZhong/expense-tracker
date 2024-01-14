@@ -38,6 +38,14 @@ header {
   padding: 0;
 }
 
+.expense-list li:nth-child(even) .expense-item {
+  background-color: #DDDDDD;
+}
+
+.edit-box {
+  margin-left: 12px;
+}
+
 .amount-container {
   display: flex;
   width: 300px;
