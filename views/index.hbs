@@ -14,15 +14,15 @@
 
   <div class="list-container">
     <ul class="expense-list">
-
+      {{#each records}}
       <li class="expense-item-container">
         <div class="expense-item">
           <div class="expense-icon"><i class="fa-solid fa-utensils"></i></div>
           <div class="expense-content">
-            <span class="expense-title">午餐</span>
-            <span class="expense-date">2019/04/23</span>
+            <span class="expense-title">{{this.name}}</span>
+            <span class="expense-date">{{this.date}}</span>
           </div>
-          <span class="expense-cost">60</span>
+          <span class="expense-cost">{{this.amount}}</span>
         </div>
         <div class="edit-box">
           <form action="">
@@ -31,6 +31,7 @@
           </form>
         </div>
       </li>
+      {{/each}}
 
     </ul>    
     <a class="btn-addNewExp" href="/new">新增支出</a>

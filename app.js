@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars')
 const port = 3000
+const Record =  require('./models/Record')
 
 
 if (process.env.NODE_ENV !== 'production') {
@@ -25,7 +26,12 @@ app.set('view engine', 'hbs')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.render('index')
+  Record.find()
+    .lean()
+    // .then(records => console.log(records))
+    .then(records => res.render('index', {records}))
+    .catch(error => console.log(error))
+  
 })
 
 app.get('/new', (req, res) => {
