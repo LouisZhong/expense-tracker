@@ -27,7 +27,7 @@
         <div class="edit-box">
 
             <a href="/records/{{ this._id }}/edit">修改</a>
-            <form action="/records/{{ this._id }}/delete" method="POST" style="display: inline;">
+            <form action="/records/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
               <button type="submit">delete</button>
             </form>
 
@@ -36,6 +36,6 @@
       {{/each}}
 
     </ul>    
-    <a class="btn-addNewExp" href="/new">新增支出</a>
+    <a class="btn-addNewExp" href="/records/new">新增支出</a>
   </div>
 </div>
