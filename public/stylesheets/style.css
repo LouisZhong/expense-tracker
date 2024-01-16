@@ -2,12 +2,20 @@ header {
   background-color: #DDDDDD;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
-.logo-title, .btn-logout {
+.logo-title, .btn-login {
   margin: 12px;
   text-decoration: none;
+}
+
+.btn-login {
+  border: 1px solid black;
+  padding: 6px;
+  border-radius: 5%;
+
 }
 
 .logo-title {

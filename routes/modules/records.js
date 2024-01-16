@@ -55,8 +55,5 @@ router.delete('/:id', (req, res) => {
     .catch(error => console.log(error))
 })
 
-router.get('/login', (req, res) => {
-  res.render('login')
-})
 
 module.exports = router
