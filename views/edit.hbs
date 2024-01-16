@@ -1,32 +1,45 @@
-<table class="add-exp-table">
-  <tbody>
-    <tr>
-      <td class="td1">*必填欄位</td>
-      <td class="td2">請輸入支出</td>
-    </tr>
-    <tr>
-      <td class="td1">名稱* :</td>
-      <td class="td2"><input class="add-new-input" type="text"></td>
-    </tr>
-    <tr>
-      <td class="td1">日期* :</td>
-      <td class="td2"><input class="add-new-input" type="date"></td>
-    </tr>
-    <tr>
-      <td class="td1">類別* :</td>
-      <td class="td2">
-        <select class="add-new-input" name="" id="">
-          <option value="Select">Select</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td class="td1">金額* :</td>
-      <td class="td2"><input class="add-new-input" type="text"></td>
-    </tr>
-    <tr>
-      <td class="td1"></td>
-      <td class="td2"><button class="add-new-btn">新增支出</button></td>
-    </tr>
-  </tbody>
-</table>
+<form action="/records/{{ record._id }}/edit" method="POST">
+  <table class="add-exp-table">
+    <tbody>
+      <tr>
+        <td class="td1">*必填欄位</td>
+        <td class="td2">請輸入支出</td>
+      </tr>
+      <tr>
+        <td class="td1">名稱* :</td>
+        <td class="td2"><input class="add-new-input" type="text" name="name" value="{{ record.name }}"></td>
+      </tr>
+      <tr>
+        <td class="td1">日期* :</td>
+        <td class="td2"><input class="add-new-input" type="date" name="date" value="{{formatDate record.date }}"></td>
+      </tr>
+      <tr>
+        <td class="td1">類別* :</td>
+        <td class="td2">
+          {{!-- <select class="add-new-input" name="category" id="" value="{{ record.category }}">
+            <option value="">Select</option>
+            <option value="家居物業">家居物業</option>
+            <option value="交通出行">交通出行</option>
+            <option value="休閒娛樂">休閒娛樂</option>
+            <option value="餐飲食品">餐飲食品</option>
+          </select> --}}
+          <select class="add-new-input" name="category">
+            <option value="" {{eq record.category "" 'selected' }}>Select</option>
+            <option value="家居物業" {{eq record.category "家居物業" 'selected' }}>家居物業</option>
+            <option value="交通出行" {{eq record.category "交通出行" 'selected' }}>交通出行</option>
+            <option value="休閒娛樂" {{eq record.category "休閒娛樂" 'selected' }}>休閒娛樂</option>
+            <option value="餐飲食品" {{eq record.category "餐飲食品" 'selected' }}>餐飲食品</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="td1">金額* :</td>
+        <td class="td2"><input class="add-new-input" type="text" name="amount" value="{{ record.amount }}"></td>
+      </tr>
+      <tr>
+        <td class="td1"></td>
+        <td class="td2"><button class="add-new-btn" type="submit">送出</button></td>
+      </tr>
+    </tbody>
+  </table>
+</form>

@@ -25,10 +25,12 @@
           <span class="expense-cost">{{this.amount}}</span>
         </div>
         <div class="edit-box">
-          <form action="">
-            <a href="/edit">修改</a>
-            <a href="">刪除</a>
-          </form>
+
+            <a href="/records/{{ this._id }}/edit">修改</a>
+            <form action="/records/{{ this._id }}/delete" method="POST" style="display: inline;">
+              <button type="submit">delete</button>
+            </form>
+
         </div>
       </li>
       {{/each}}
