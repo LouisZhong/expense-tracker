@@ -1,16 +1,7 @@
-const mongoose = require('mongoose')
 const Record = require('../Record') // 載入 todo model
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
+const db = require('../../config/mongoose')
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-db.on('error', () => {
-  console.log('mongodb error!')
-})
 db.once('open', () => {
-  console.log('mongodb connected!')
   for (let i = 1; i < 9; i++) {
     Record.create({
       name: `第${i}餐`,
@@ -19,4 +10,5 @@ db.once('open', () => {
       category: `食物`
     })
   }
+  console.log('done')
 })

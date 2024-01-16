@@ -8,20 +8,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const helpers = require('./helpers/helpers')
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
-const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-
-const db = mongoose.connection
-
-db.on('error', () => {
-  console.log('mongodb error')
-})
-db.once('open', () => {
-  console.log('mongodb connnected!')
-})
+require('./config/mongoose')
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs', helpers: helpers}))
 app.set('view engine', 'hbs')
