@@ -33,6 +33,7 @@ header {
   margin-top: 20px;
   /* border: 1px solid red; */
 }
+
 /* index */
 
 .category-selection {
@@ -148,4 +149,40 @@ header {
 
 select {
   padding: 1px;
+}
+
+/* login */
+.login-title {
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container label {
+  width: 200px;
+  margin: 6px 0;
+}
+
+.btn-login-submit, .btn-google-login {
+  display: block;
+  width: 100%;
+  height: 36px;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.btn-google-login {
+  background-color: #D84B37;
+  color: white;
+}
+
+.email-input, .password-input {
+  height: 32px;
+  font-size: 16px;
+  margin: 2px 0;
 }
