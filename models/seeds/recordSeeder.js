@@ -1,4 +1,4 @@
-const Record = require('../Record') // 載入 todo model
+const Record = require('../record') // 載入 todo model
 const db = require('../../config/mongoose')
 
 db.once('open', () => {
