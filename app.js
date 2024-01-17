@@ -10,10 +10,12 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const helpers = require('./helpers/helpers')
 
+
 require('./config/mongoose')
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs', helpers: helpers}))
 app.set('view engine', 'hbs')
+
 
 app.use(session({
   secret: 'ThisIsMySecret',
