@@ -1,5 +1,6 @@
 const express = require('express')
 const session = require('express-session')
+const usePassport = require('./config/passport')
 const app = express()
 const exphbs = require('express-handlebars')
 const routes = require('./routes')
@@ -19,6 +20,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+usePassport(app)
 
 
 app.use(bodyParser.urlencoded({ extended: true}))
