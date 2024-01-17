@@ -8,8 +8,12 @@
 </head>
 <body>
   <header>
-    <a class="logo-title" href="/">家庭記帳本</a>
-    <a class="btn-login" href="/users/login">Login</a>
+    <a class="logo-title" href="/">{{#if isAuthenticated}}{{user.name}}'s{{/if}}家庭記帳本</a>
+    {{#if isAuthenticated}}
+      <a class="btn-login" href="/users/logout">Logout</a>
+    {{else}}
+      <a class="btn-login" href="/users/login">Login</a>
+    {{/if}}
   </header>
   
   <div class="container">
