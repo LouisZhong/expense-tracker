@@ -1,23 +1,23 @@
 <div class="login-container">
-  <h1 class="login-title">Login</h1>
-  <form action="/users/login" method="POST">
+  <h1 class="login-title">Register</h1>
+  <form action="/users/register" method="POST">
     <div class="input-container">
       <label for="name" class="email-title">Name</label>
-      <input id="name" type="text" class="email-input" name="name" placeholder="Enter Name">
+      <input id="name" type="text" class="email-input" name="name" placeholder="Enter Name" value="{{ name }}">
     </div>
     <div class="input-container">
       <label for="email" class="email-title">Email</label>
-      <input id="email" type="text" class="email-input" name="email" placeholder="Enter email"> 
+      <input id="email" type="text" class="email-input" name="email" placeholder="Enter email" value="{{ email }}"> 
     </div>
     <div class="input-container">
       <label for="password" class="password-title">Password</label>
-      <input id="password" type="text" class="password-input" name="password" placeholder="Enter password">
+      <input id="password" type="text" class="password-input" name="password" placeholder="Enter password" value="{{ password }}"> 
     </div>
     <div class="input-container">
       <label for="confirmPassword" class="password-title">Confirm Password</label>
-      <input id="confirmPassword" type="text" class="password-input" name="confirmPassword"  placeholder="Confirm password">
+      <input id="confirmPassword" type="text" class="password-input" name="confirmPassword"  placeholder="Confirm password" value="{{ confirmPassword }}">
     </div>
-    <button type="submit" class="btn-login-submit">Login</button>
+    <button type="submit" class="btn-login-submit">Register</button>
     <a href="/auth/google" class="btn-google-login">Google Login</a>
   </form>
   <p>
