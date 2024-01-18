@@ -8,6 +8,7 @@ const routes = require('./routes')
 const port = 3000
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+const flash = require('connect-flash')
 const helpers = require('./helpers/helpers')
 
 
@@ -23,10 +24,13 @@ app.use(session({
   saveUninitialized: true
 }))
 usePassport(app)
+app.use(flash())
 app.use((req, res, next) => {
   console.log('user',  req.user)
   res.locals.isAuthenticated = req.isAuthenticated()
   res.locals.user = req.user
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.warning_msg = req.flash('warning_msg')
   next()
 })
 

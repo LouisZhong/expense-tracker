@@ -14,6 +14,7 @@ router.post('/login', passport.authenticate('local', {
 
 router.get('/logout', (req, res) => {
   req.logout()
+  req.flash('success_msg', '你已經成功登出')
   res.redirect('login')
 })
 
@@ -23,6 +24,23 @@ router.get('/register', (req, res) => {
 
 router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
+  const errors = []
+  if (!name || !email || !password || confirmPassword) {
+    errors.push({ message: '所有欄位是必填'})
+  }
+  if (password !== confirmPassword) {
+    errors.push({ message: '密碼與確認密碼不符'})
+  }
+  //如果有errors 重新導回註冊頁面
+  if (errors.length) {
+    return res.render('register', {
+      errors,
+      name,
+      email,
+      password,
+      confirmPassword
+    })
+  }
   // 檢查使用者是否已經註冊
   User.findOne({ email }).then(user => {
     // 如果已經註冊：退回原本畫面
